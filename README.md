@@ -48,6 +48,8 @@ Execute in git-clone repositore folder:
 $ docker compose up -d
 ```
 
+![image](https://user-images.githubusercontent.com/6979641/188043629-b461fbef-fa3e-4f09-ae78-7d217613dc62.png)
+
 Run the code bellow to check the STATUS of the clusters. All clusteres have to be "(healthy)":
 
 ```
