@@ -71,6 +71,7 @@ x-airflow-common:
     "password": "sparkns",
     "port": "5432"
     }'
+    AIRFLOW_CONN_HTTP_XPTO_API: 'https://619ca0ea68ebaa001753c9b0.mockapi.io/'
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
