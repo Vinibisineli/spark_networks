@@ -1,11 +1,14 @@
 import json
 import os
 from tokenize import String
+import requests
 
 class SaveFile:
 
-    def save_json_to_file(data:json, file_name: String) -> None:
+    def save_json_to_file(http:String, endpoint:String, file_name: String) -> None:
         
-        with open(f'/opt/airflow/dags/data/{file_name}', 'w') as f:
-            json.dump(data, f)
+        my_request = http+endpoint
+        x = requests.get(my_request)
+        with open(f'/opt/airflow/dags/data/{file_name}', 'wb') as f:
+            f.write(x.content)
 
