@@ -1,0 +1,7 @@
+INSERT INTO raw.users (user_id,createdAt,updatedAt,firstName,lastName,address,city,country,zipCode,email,birthDate,gender,isSmoking,profession,income) VALUES 
+(1,'2021-11-23T16:10:33.614Z','2021-11-24T13:34:15.404Z','Levi','Bins','Ernestine Shore','Pembroke Pines','United States','05734','Kianna_Nicolas@hotmail.com','2020-12-16T02:41:21.036Z','male',True,'Central Configuration Planner',3709.61),
+(2,'2021-11-23T02:40:10.964Z','2021-11-24T16:04:42.393Z','Aric','Shields','Sporer Field','Meganemouth','Namibia','59236','Madelynn.Ruecker27@gmail.com','2021-10-08T12:12:49.168Z','male',True,'Corporate Tactics Strategist',1504.25),
+(3,'2021-11-23T06:26:53.843Z','2021-11-24T06:37:01.117Z','Norene','Lockman','Ida Villages','Port Cary','Bulgaria','83202-2695','Mia_Kling33@gmail.com','2021-01-13T10:11:14.643Z','female',False,'Senior Quality Manager',3256.41),
+(4,'2021-11-23T03:27:56.458Z','2021-11-24T17:00:21.524Z','Dariana','Bradtke','Mallie Mission','South Christophe','United States','70183','Chance_Mertz@gmail.com','2021-09-22T20:53:42.528Z','male',True,'Internal Division Agent',758.89),
+(5,'2021-11-23T14:57:27.793Z','2021-11-24T05:23:38.587Z','Gabriella','Rohan','Heaney Cove','East Darrionhaven','Iceland','98347','Arely_Terry11@gmail.com','2021-07-23T02:31:51.232Z','female',False,'Central Paradigm Agent',2658.19),
+(6,'2021-11-22T19:14:23.721Z','2021-11-24T02:56:07.833Z','Wilhelm','Barrows','Stoltenberg Ranch','NULL','United States','NULL','Kathryn47@yahoo.com','2021-09-29T06:05:18.013Z','NULL',True,'Customer Security Producer',NULL) on conflict do nothing

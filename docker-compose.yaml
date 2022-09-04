@@ -58,7 +58,7 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'True'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- pandas xlrd psycopg2-binary airflow-provider-xlsx configparser}
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- pandas xlrd psycopg2-binary airflow-provider-xlsx configparser dbt-postgres}
     AIRFLOW_CONN_URL_CONNID: '{
     "conn_type": "http",
     "host": "https://github.com"
@@ -77,6 +77,7 @@ x-airflow-common:
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
     - ./data:/opt/data
+    - ./dbt:/home/airflow/.dbt/
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -106,10 +107,12 @@ services:
       POSTGRES_USER: sparkns
       POSTGRES_PASSWORD: sparkns
       POSTGRES_DB: sparkns
+      DBT_SCHEMA: dbt
+      DBT_RAW_DATA_SCHEMA: raw
     volumes:
       - postgres-sparkns-volume:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "raizen"]
+      test: ["CMD", "pg_isready", "-U", "sparkns"]
       interval: 5s
       retries: 5
     restart: always

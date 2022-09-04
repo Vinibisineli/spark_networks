@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+    - name: sparknetworks
+      database: postgres
+      schema: raw
+      tables:
+        - name: users
+        - name: messages
+        - name: subscription

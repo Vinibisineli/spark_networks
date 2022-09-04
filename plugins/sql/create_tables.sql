@@ -1,7 +1,7 @@
 CREATE SCHEMA IF NOT EXISTS raw;
 CREATE SCHEMA IF NOT EXISTS trusted;
 
-DROP TABLE IF EXISTS raw.users;
+DROP TABLE IF EXISTS raw.users CASCADE;
 CREATE TABLE raw.users(
 	user_id int PRIMARY KEY,
 	createdAt timestamp,
@@ -20,7 +20,7 @@ CREATE TABLE raw.users(
 	income float
 );
 
-DROP TABLE IF EXISTS raw.subscription;
+DROP TABLE IF EXISTS raw.subscription CASCADE ;
 CREATE TABLE raw.subscription(
 	subscription_id SERIAL PRIMARY KEY,
 	user_id int,
@@ -32,7 +32,7 @@ CREATE TABLE raw.subscription(
 );
 CREATE INDEX IF NOT EXISTS idx_user ON raw.subscription (user_id);
 
-DROP TABLE IF EXISTS raw.messages;
+DROP TABLE IF EXISTS raw.messages CASCADE;
 CREATE TABLE raw.messages(
 	message_id bigint PRIMARY KEY,
 	createdAt timestamp,

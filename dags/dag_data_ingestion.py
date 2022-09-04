@@ -5,6 +5,8 @@ from airflow.providers.http.operators.http import SimpleHttpOperator
 from airflow.providers.http.sensors.http import HttpSensor
 from airflow.operators.python_operator import PythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.operators.bash import BashOperator
+
 
 from datetime import datetime,timedelta
 
@@ -74,6 +76,11 @@ with DAG(
         postgres_conn_id = "POSTGRES_CONNID",
     )
 
+    dbt_run = BashOperator(
+        task_id='create_trsuted_zone',
+        bash_command='dbt run --project-dir /home/airflow/.dbt/'
+    )
+
     for topic in entries:
 
         http_check_sensor = HttpSensor(
@@ -104,4 +111,4 @@ with DAG(
             postgres_conn_id = "POSTGRES_CONNID",
         )
 
-        create_table >> create_sql_insert_file >> insert_raw >> end
+        create_table >> create_sql_insert_file >> insert_raw >> dbt_run >> end
