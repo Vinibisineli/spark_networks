@@ -59,7 +59,7 @@ $ docker ps
 ![image](https://user-images.githubusercontent.com/6979641/188043333-665ec5f9-bc21-4fe3-b9eb-a6f359d8e010.png)
 
 
-## Challange
+## Chellange
 
 To resolve this puzzel was used Airflow as orchestrator, PostgreSQL as DW, dbt to transform the data and Docker as environment.virtualizer.
 
@@ -87,8 +87,8 @@ __Password:__ sparkns
 2. A native e-mail alert should be used to warn about some failure.
 
 ### GDPR
-1. It will be necessary to understand a little bit more the stakeholder goal to think about remove some PII data from the trusted layer.  
-2. MD5 is not a safe hash to use, some other better options should be use, like sha256.
+It will be necessary to understand a little bit more the stakeholder goal to think about remove some PII data from the trusted layer.  
+
 
 ### Cloud
 
