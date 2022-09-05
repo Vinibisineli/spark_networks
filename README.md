@@ -58,9 +58,13 @@ $ docker ps
 
 ![image](https://user-images.githubusercontent.com/6979641/188043333-665ec5f9-bc21-4fe3-b9eb-a6f359d8e010.png)
 
-## App
 
-[TODO] Description
+## Challange
+
+To resolve this puzzel was used Airflow as orchestrator, PostgreSQL as DW, dbt to transform the data and Docker as environment.virtualizer.
+
+To run the pipeline, acess the airflow with the link bellow, enter on "spark_etl" DAG and execute manually.
+
 
 ## Airflow credentials
 
@@ -75,3 +79,30 @@ __Host:__ localhost
 __Port:__ 5432  
 __Login:__ sparkns  
 __Password:__ sparkns
+
+## Improvements
+
+### Airflow/DAG
+1. To facilitate test execution, I code only one DAG. In a "real" situation I would split the DAG by HTTP calls. As we can use the data for others analysis, it is not indicate to create dependencies between endpoints. So, in one DAG, if the message endpoint goes down, the trusted data will not be avaliable for the analist.
+2. A native e-mail alert should be used to warn about some failure.
+
+### GDPR
+1. It will be necessary to understand a little bit more the stakeholder goal to think about remove some PII data from the trusted layer.  
+2. MD5 is not a safe hash to use, some other better options should be use, like sha256.
+
+### Cloud
+
+In order to have more secure an a more complete ecosytem, the use of Cloud would help to increase the possibilites of the project.
+
+### DW
+
+As mention above, cloud could bring us more performance, oportunities, scalability and security. Big Query and SnowFlake may be good option.
+
+### DBT
+
+Generics and single teste should be implemeted. Unique, not_null, accepted_values and relationships at least.  
+Soda.io is an open-source and user-friendly Data Observability plataform whos woul increase the quality and trustability of our data. It is another option instead of dbt tests.
+
+### Data Catalog
+
+inever used a data catalog software yet, but Amundsen would be a good option to implement.
