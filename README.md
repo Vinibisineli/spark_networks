@@ -59,7 +59,7 @@ $ docker ps
 ![image](https://user-images.githubusercontent.com/6979641/188043333-665ec5f9-bc21-4fe3-b9eb-a6f359d8e010.png)
 
 
-## Chellange
+## Challenge
 
 To resolve this puzzel was used Airflow as orchestrator, PostgreSQL as DW, dbt to transform the data and Docker as environment.virtualizer.
 
