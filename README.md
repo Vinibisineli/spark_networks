@@ -61,7 +61,15 @@ $ docker ps
 
 ## Challenge
 
-To resolve this puzzel was used Airflow as orchestrator, PostgreSQL as DW, dbt to transform the data and Docker as environment.virtualizer.
+To resolve this puzzle was used Airflow as orchestrator, PostgreSQL as DW, dbt to transform the data and Docker as environment.virtualizer.
+
+Airflow is important to orchestrator the pipelines and their dependencies, monitoring and alerting in case of any failure. After dozens of DAGs, it becomes impossible whitout a service like that.
+
+Postgre is not the best option for DW. I will comment better options of DW on the [Improvements](#improvements) section.
+
+DBT is a good open-source option to organize, tranform, test and document our pipelines.
+
+Docker is essential to ensure enviroment will always be functional on ever place we run it.
 
 To run the pipeline, acess the airflow with the link bellow, enter on "spark_etl" DAG and execute manually.
 
