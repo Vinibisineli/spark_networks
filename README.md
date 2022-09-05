@@ -105,4 +105,4 @@ Soda.io is an open-source and user-friendly Data Observability plataform whos wo
 
 ### Data Catalog
 
-inever used a data catalog software yet, but Amundsen would be a good option to implement.
+I never used a data catalog software yet, but Amundsen would be a good option to implement.
