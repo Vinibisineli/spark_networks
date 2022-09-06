@@ -73,6 +73,8 @@ Docker is essential to ensure enviroment will always be functional on ever place
 
 To run the pipeline, acess the airflow with the link bellow, enter on "spark_etl" DAG and execute manually.
 
+![image](https://user-images.githubusercontent.com/6979641/188530508-69c30882-54af-4e7c-ae06-64e472271a57.png)
+
 
 ## Airflow credentials
 
@@ -87,6 +89,20 @@ __Host:__ localhost
 __Port:__ 5432  
 __Login:__ sparkns  
 __Password:__ sparkns
+
+## Folder Structure
+
+- dags - where the DAGs and other Python scripts nedd to be
+  - data - path to salve data extract from DAG 
+  - script - Python scripts use on DAGs 
+- dbt - files used by dbt to generate data transformation
+  - models
+    - anonymize - model to hasg some PII values
+    - rename - model to rename columns
+    - trusted - model to generate data to DA
+- plugins 
+  - sql - place to store .sql files used on DAGs  
+
 
 ## Improvements
 
