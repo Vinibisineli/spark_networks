@@ -77,7 +77,7 @@ with DAG(
     )
 
     dbt_run = BashOperator(
-        task_id='create_trsuted_zone',
+        task_id='create_trusted_zone',
         bash_command='dbt run --project-dir /home/airflow/.dbt/'
     )
 
