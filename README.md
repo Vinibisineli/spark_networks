@@ -73,7 +73,33 @@ Docker is essential to ensure enviroment will always be functional on ever place
 
 To run the pipeline, acess the airflow with the link bellow, enter on "spark_etl" DAG and execute manually.
 
+
+### ETL - Airflow
 ![image](https://user-images.githubusercontent.com/6979641/188530508-69c30882-54af-4e7c-ae06-64e472271a57.png)
+
+### DBT Lineage
+![image](https://user-images.githubusercontent.com/6979641/188532820-33fcca41-cc28-4c54-8e92-e085a210ba06.png)
+
+- To generate DBT docs will be need to enter on airflow container running:
+
+```
+$ docker exec -it spark_networks-airflow-webserver-1 /bin/bash
+```
+   
+After run the code:
+
+```
+dbt docs generate
+```
+
+and then:
+
+```
+dbt docs serve --port 8098
+```
+
+So will be able to acess http://localhost:8090
+
 
 
 ## Airflow credentials
